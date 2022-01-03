@@ -129,7 +129,12 @@ public class MovingLeastSquaresTransform extends mpicbg.models.MovingLeastSquare
 		// Will help lots git and .zip to reduce XML file size
 
 		final ArrayList< PointMatch > pms = new ArrayList< PointMatch >( matches );
-		Collections.sort( pms, SORTER );
+
+		try
+		{
+			Collections.sort( pms, SORTER );
+		}
+		catch (java.lang.IllegalArgumentException e) { }
 
 		for ( final PointMatch m : pms )
 		{
